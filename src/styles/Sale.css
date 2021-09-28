@@ -1,0 +1,19 @@
+.sale__section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.sale__firstTitle {
+    font: 34px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    margin-top: 100px;
+}
+
+.sale__secondTitle {
+    font: 34px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+}
