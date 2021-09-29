@@ -15,7 +15,7 @@ const Footer = () => {
         <p className="footer__text">Sign up for exclusive early sale access and tailored new arrivals.</p>
         <input type="email" name="email" className="footer__input" placeholder="Your email address" />
         <button type="submit" className="footer__button">JOIN</button>
-        <hr/>
+        <hr className="footer__hr"/>
 
         <div className="footer__container">
           <div className="footer__box">

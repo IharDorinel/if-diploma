@@ -20,7 +20,7 @@ const TopSection = () => {
         <p className="header__page">SHOP</p>
         <p className="header__page">COLLECTIONS</p>
         </div>
-        {/*<div className="header__upperContainer">*/}
+
           <img src={logo} className="header__logo" alt="logo" />
 
         <div className="header__rightUpperContainer">
@@ -32,7 +32,7 @@ const TopSection = () => {
           <p className="header__page">BAG (2)</p>
           <img src={wishlist} className="header__wishlist" alt="wishlist" />
         </div>
-        {/*</div>*/}
+       
         </div>
 
         <div className="header__lowerContainer">

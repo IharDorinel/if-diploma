@@ -1,6 +1,8 @@
 .sale__section {
     padding-top: 90px;
     padding-bottom: 90px;
+    margin: auto;
+    width: 1240px;
 }
 
 .sale__firstTitle {
@@ -16,4 +18,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 40px;
+}
+
+.sale__gallery {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 80px;
 }
