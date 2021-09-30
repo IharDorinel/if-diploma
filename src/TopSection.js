@@ -9,7 +9,6 @@ import wishlist from './project_images/wishlist-icon.svg';
 const TopSection = () => {
 
 
-
   return (
     <>
       <div className="header__bigContainer">

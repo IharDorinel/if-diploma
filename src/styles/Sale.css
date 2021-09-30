@@ -5,6 +5,10 @@
     width: 1240px;
 }
 
+.category__titleContainer {
+    text-align: center;
+}
+
 .sale__firstTitle {
     font: 34px Roboto, sans-serif;
     font-style: normal;
@@ -25,4 +29,24 @@
     align-items: center;
     overflow: hidden;
     margin-top: 80px;
+    position: relative;
+}
+
+.sale__ellipse {
+    width: 50px;
+    height: 50px;
+    top: 33%;
+    right: -20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.sale__arrow {
+    width: 16px;
+    height: 25px;
+    top: 35.5%;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
 }

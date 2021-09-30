@@ -1,4 +1,5 @@
-
+import React, {useEffect, useState} from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 //components
@@ -6,8 +7,7 @@ import TopSection from "./TopSection";
 import Category from "./Category";
 import Footer from "./Footer";
 import Sale from "./Sale";
-import EnterSearch from "./EnterSearch";
-import Account from "./Account";
+import ItemCard from "./ItemCard";
 
 
 // styles
@@ -22,15 +22,29 @@ import './styles/SaleContent.css';
 
 
 
-
 function App() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://modnikky-api.herokuapp.com/api/catalog')
+      .then(res => res.json())
+      .then(data => setData(data))
+      .catch(err => console.err)
+  }, [])
+
   return (
-    <div className="App">
+   <>
+     <Router>
       <TopSection />
-      <Category />
-      <Sale />
+      <Category props={data}/>
+      <Sale props={data}/>
+       <Route exact path="/:id">
+         <ItemCard />
+       </Route>
       <Footer />
-    </div>
+     </Router>
+   </>
   );
 }
 

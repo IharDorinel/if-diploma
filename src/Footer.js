@@ -11,10 +11,12 @@ const Footer = () => {
   return (
     <>
       <section className="footer__section">
+        <div className="footer__upper">
         <p className="footer__title">SIGN UP FOR UPDATES</p>
         <p className="footer__text">Sign up for exclusive early sale access and tailored new arrivals.</p>
         <input type="email" name="email" className="footer__input" placeholder="Your email address" />
         <button type="submit" className="footer__button">JOIN</button>
+      </div>
         <hr className="footer__hr"/>
 
         <div className="footer__container">

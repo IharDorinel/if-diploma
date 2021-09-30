@@ -1,5 +1,7 @@
 .saleContent__item {
+    height: 500px;
     margin-right: 12px;
+    position: relative;
 }
 
 .saleContent__image {
@@ -7,4 +9,53 @@
     height: 400px;
     object-fit: cover;
     object-position: center;
+}
+
+.saleContent__wishlist {
+    top: 12px;
+    right: 12px;
+    position: absolute;
+}
+
+.saleContent__rectangle {
+    width: 45px;
+    height: 25px;
+    background-color: red;
+    bottom: 100px;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.saleContent__discount {
+    font: 14px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    color: #FFFFFF;
+    top: -22px;
+    left: 5px;
+    position: absolute;
+}
+
+.saleContent__price {
+    font: 18px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 40px;
+    text-decoration-line: line-through;
+    left: 0;
+    bottom: 50px;
+    position: absolute;
+}
+
+.saleContent__perPrice {
+    font: 20px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 40px;
+    color: #D7302D;
+    left: 75px;
+    bottom: 50px;
+    position: absolute;
 }
