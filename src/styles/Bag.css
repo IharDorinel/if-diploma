@@ -1,0 +1,10 @@
+.bag__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.bag__descrContainer {
+    display: flex;
+    flex-direction: column;
+}

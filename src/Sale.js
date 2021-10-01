@@ -8,14 +8,6 @@ import arrow from "./project_images/arrow.svg";
 
 const Sale = ({ props }) => {
 
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('https://modnikky-api.herokuapp.com/api/catalog')
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.err)
-  }, [])
 
   return (
     <>

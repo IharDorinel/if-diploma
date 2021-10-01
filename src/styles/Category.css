@@ -32,7 +32,7 @@
     margin-left: 100px;
 }
 
-rectangle {
+.category__rectangle {
     width: 180px;
     height: 90px;
     background-color: #EDE7F0;

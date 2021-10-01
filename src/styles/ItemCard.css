@@ -1,0 +1,105 @@
+.itemCard__section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.itemCard__image {
+    width: 500px;
+    height: 800px;
+}
+
+.itemCard__descrContainer {
+    margin: 60px;
+    position: relative;
+}
+
+.itemCard__title {
+    font: 16px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.itemCard__price {
+    font: 12px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+}
+
+.itemCard__order {
+    font: 12px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    color: #D8D8D8;
+}
+
+.itemCard__miniTitle {
+    font: 12px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+}
+
+.itemCard__button {
+    width: 190px;
+    height: 50px;
+    background-color: #000F08;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.itemCard__rectangle {
+    width: 50px;
+    height: 50px;
+    background-color: #000F08;
+    top: 241px;
+    position: absolute;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+.itemCard__wishlist {
+    top: 23%;
+    left: 22%;
+    position: absolute;
+}
+
+.itemCard__plus1 {
+    bottom: 261px;
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.itemCard__plus2 {
+    bottom: 60px;
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.itemCard__plus3 {
+    bottom: 25px;
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.color_gray {
+    color: #8C8C8C;
+}
+
+.color_lightGray {
+    color: #D8D8D8;
+}
+
+.color_black {
+    color: #000F08
+}
+
+.margin-left {
+    margin-left: 50px;
+}

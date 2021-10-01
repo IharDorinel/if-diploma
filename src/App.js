@@ -8,6 +8,7 @@ import Category from "./Category";
 import Footer from "./Footer";
 import Sale from "./Sale";
 import ItemCard from "./ItemCard";
+import Bag from "./Bag";
 
 
 // styles
@@ -19,7 +20,8 @@ import './styles/Footer.css';
 import './styles/EnterSearch.css';
 import './styles/Account.css';
 import './styles/SaleContent.css';
-
+import './styles/ItemCard.css';
+import './styles/Bag.css';
 
 
 function App() {
@@ -39,9 +41,6 @@ function App() {
       <TopSection />
       <Category props={data}/>
       <Sale props={data}/>
-       <Route exact path="/:id">
-         <ItemCard />
-       </Route>
       <Footer />
      </Router>
    </>

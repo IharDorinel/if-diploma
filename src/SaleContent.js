@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, BrowserRouter as Router} from "react-router-dom";
 
 
 // images
@@ -13,17 +13,22 @@ const SaleContent = ({props}) => {
   return (
     <>
       {props.map((elem) => (
-        <div className="saleContent__item">
-          <img src={elem.images[0]} className="saleContent__image" alt={elem.name}>
-            <Link to={`/${elem.id}`}/>
-          </img>
+        <Router>
+          <Link to={`/${elem.id}`}/>
+        <div className="saleContent__item" key={elem.id}>
+
+          <img  src={elem.images[0]} className="saleContent__image" alt={elem.name}/>
+
           <img src={wishlist} className="saleContent__wishlist" alt="wishlist" />
           <rectangle className="saleContent__rectangle">
             <p className="saleContent__discount">-{percent}%</p>
             </rectangle>
           <span className="saleContent__price">$ {elem.price.value}</span>
+          <Router>
           <span className="saleContent__perPrice">$ {elem.price.value * (100 - percent) / 100}</span>
+          </Router>
         </div>
+        </Router>
       ))
       }
     </>
