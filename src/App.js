@@ -41,6 +41,8 @@ function App() {
       <TopSection />
       <Category props={data}/>
       <Sale props={data}/>
+       <ItemCard />
+       <Bag />
       <Footer />
      </Router>
    </>

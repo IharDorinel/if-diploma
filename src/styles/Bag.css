@@ -1,10 +1,120 @@
+.bag__section {
+    padding: 0 450px 120px;
+}
+
+.bag__title {
+    font: 20px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-right: 20px;
+}
+
+.bag__quantity {
+    font: 12px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+}
+
 .bag__container {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 30px;
 }
 
 .bag__descrContainer {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
+}
+
+.bag__image {
+    width: 160px;
+    height: 230px;
+}
+
+.bag__itemName {
+    font: 16px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.bag__text {
+    font: 13px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px;
+}
+
+.bag__selectContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+select {
+    width: 85px;
+    border: none;
+}
+
+.bag__selectNumber {
+    width: 35px;
+}
+
+option {
+    font: 12px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.bag__removeContainer {
+    margin: 40px 0 30px;
+    text-align: right;
+}
+
+.bag__cross {
+    width: 12px;
+    height: 12px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.bag__totalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bag__total {
+    font: 20px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+
+.bag__button {
+    width: 240px;
+    height: 50px;
+    background-color: #000F08;
+    color: #FFFFFF;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.bag__icon {
+    width: 40px;
+    height: 24px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.bag__iconContainer {
+    margin-top: 20px;
+    text-align: center;
 }

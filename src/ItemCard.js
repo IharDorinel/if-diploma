@@ -23,6 +23,8 @@ const ItemCard = () => {
       <p className="itemCard__miniTitle, color_black">USD $300.00</p>
       <p className="itemCard__miniTitle, color_lightGray">PRE-ORDER</p>
       <p className="itemCard__miniTitle, color_gray">COLOR</p>
+          <rectangle className="itemCard__colorRect">
+          </rectangle>
       <p className="itemCard__miniTitle, color_gray">SIZE</p>
           <p className="itemCard__size">S M L XL</p>
 
@@ -32,12 +34,12 @@ const ItemCard = () => {
           </rectangle>
 
           <img src={minus} className="itemCard__plus1" alt="plus"/>
-      <p className="itemCard__miniTitle, color_black, margin-left">PRODUCT DESCRIPTION</p>
-      <p className="itemCard__text, color_gray, margin-left">Saints are a low-waist, drop crotch relaxed boyfriend jean. Straight fit across the hips, bow shape legs, with knee darts and tapered leg. Back pockets dropped slightly for slouch feel.</p>
+      <p className="itemCard__miniTitle, color_black, margin_left">PRODUCT DESCRIPTION</p>
+      <p className="itemCard__text, color_gray, margin_left">Saints are a low-waist, drop crotch relaxed boyfriend jean. Straight fit across the hips, bow shape legs, with knee darts and tapered leg. Back pockets dropped slightly for slouch feel.</p>
           <img src={minus} className="itemCard__plus2" alt="plus"/>
-      <p className="itemCard__miniTitle, color_black, margin-left">SHIPPING & RETURNS</p>
+      <p className="itemCard__miniTitle, color_black, margin_left">SHIPPING & RETURNS</p>
           <img src={minus} className="itemCard__plus3" alt="plus"/>
-      <p className="itemCard__miniTitle, color_black, margin-left">FABRIC COMPOSITION</p>
+      <p className="itemCard__miniTitle, color_black, margin_left">FABRIC COMPOSITION</p>
 
         </div>
       </div>
