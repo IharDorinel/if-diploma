@@ -1,0 +1,27 @@
+.instagram__section {
+    padding: 50px;
+}
+
+.instagram__text {
+    font: 16px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.instagram__bigContainer {
+    display: flex;
+    margin: 30px 0;
+}
+
+.instagram__firstImage {
+    width: 630px;
+    height: 630px;
+}
+
+.instagram__image {
+    width: 315px;
+    height: 315px;
+    object-position: center;
+    object-fit: cover;
+}

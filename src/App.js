@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //components
 import TopSection from "./TopSection";
+import EnterSearch from "./EnterSearch";
 import Category from "./Category";
+import Instagram from "./Instagram";
 import Footer from "./Footer";
 import Sale from "./Sale";
 import ItemCard from "./ItemCard";
@@ -22,6 +24,8 @@ import './styles/Account.css';
 import './styles/SaleContent.css';
 import './styles/ItemCard.css';
 import './styles/Bag.css';
+import './styles/Instagram.css';
+
 
 
 function App() {
@@ -41,8 +45,9 @@ function App() {
       <TopSection />
       <Category props={data}/>
       <Sale props={data}/>
-       <ItemCard />
-       <Bag />
+       {/*<ItemCard />*/}
+       {/*<Bag />*/}
+       <Instagram />
       <Footer />
      </Router>
    </>

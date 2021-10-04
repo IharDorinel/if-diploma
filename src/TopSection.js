@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import EnterSearch from "./EnterSearch";
+import SearchResults from "./SearchResults";
 
 // images
 import logo from './project_images/brand-logo.svg';
@@ -6,8 +8,37 @@ import loupe from './project_images/Vector.svg';
 import wishlist from './project_images/wishlist-icon.svg';
 
 
+
 const TopSection = () => {
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const [currentValue, setCurrentValue] = useState('');
+
+  const [data, setData] = useState([]);
+
+  const fetchData = () => fetch('https://modnikky-api.herokuapp.com/api/catalog')
+    .then(res => res.json());
+
+  const setValue = (event) => {
+    setCurrentValue(event.target.value);
+
+    if(!currentValue.trim()) {
+      setData([]);
+    }
+
+    fetchData(currentValue)
+      .then(data => data.filter(obj => obj?.type?.toLowerCase().includes(currentValue.toLowerCase()) ||
+        obj?.name?.toLowerCase().includes(currentValue.toLowerCase())))
+      .then(data => setData(data))
+  };
+
+
+  const showSearch = () => {
+    setIsVisible(prev => !prev);
+  };
+
+  const searchResults = data.length > 0 ? <SearchResults props={data} /> : null;
 
   return (
     <>
@@ -25,7 +56,7 @@ const TopSection = () => {
         <div className="header__rightUpperContainer">
           <div className="header__searchContainer">
           <img className="header__loupe" src={loupe} alt="loupe" />
-          <p className="header__page">SEARCH</p>
+          <p className="header__page" onClick={showSearch}>SEARCH</p>
         </div>
           <p className="header__page">SIGN IN</p>
           <p className="header__page">BAG (2)</p>
@@ -33,6 +64,13 @@ const TopSection = () => {
         </div>
        
         </div>
+
+        {isVisible ? (
+          <EnterSearch setValue={setValue} fetchData={fetchData}
+                       currentValue={currentValue} setIsVisible={setIsVisible} setData={setData} />
+          )
+          : null
+        }
 
         <div className="header__lowerContainer">
         <h1 className="header__header">NEW COLLECTION</h1>
@@ -42,6 +80,8 @@ const TopSection = () => {
         </div>
 
       </div>
+
+      {searchResults}
 
     </>
   )
