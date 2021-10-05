@@ -2,12 +2,18 @@
     width: 500px;
     height: 600px;
     padding: 50px;
+    background-color: #FFFFFF;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 2;
 }
 
 .account__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .account__title {
@@ -30,7 +36,14 @@
 .account__input {
     border: none;
     width: 450px;
-    margin-top: 30px;
+    margin: 30px 23px 0;
+}
+
+.account__error {
+    color: red;
+    font: 14px Roboto, sans-serif;
+    margin-left: 25px;
+    position: absolute;
 }
 
 .account__hr {
@@ -87,6 +100,7 @@
 
 .text-decoration {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 

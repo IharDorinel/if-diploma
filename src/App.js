@@ -45,7 +45,7 @@ function App() {
       <TopSection />
       <Category props={data}/>
       <Sale props={data}/>
-       {/*<ItemCard />*/}
+       <ItemCard />
        {/*<Bag />*/}
        <Instagram />
       <Footer />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavLink, useParams} from 'react-router-dom';
 
 // import
@@ -9,6 +9,28 @@ import minus from './project_images/collapse-icon.svg';
 
 
 const ItemCard = () => {
+
+  const [productIsVisible, setProductIsVisible] = useState(false);
+
+  const [shippingIsVisible, setShippingIsVisible] = useState(false);
+
+  const [fabricIsVisible, setFabricIsVisible] = useState(false);
+
+
+  const showProductContent = () => {
+    setProductIsVisible(prev => !prev);
+
+  }
+
+  const showShippingContent = () => {
+    setShippingIsVisible(prev => !prev);
+
+  }
+
+  const showFabricContent = () => {
+    setFabricIsVisible(prev => !prev);
+
+  }
 
 
   return (
@@ -33,13 +55,32 @@ const ItemCard = () => {
             <img src={wishlist} className="itemCard__wishlist" alt="wishlist" />
           </rectangle>
 
-          <img src={minus} className="itemCard__plus1" alt="plus"/>
+          <div className="itemCard__product">
+          <img src={minus} className="itemCard__plus1" onClick={showProductContent} alt="plus"/>
       <p className="itemCard__miniTitle, color_black, margin_left">PRODUCT DESCRIPTION</p>
+          {productIsVisible
+            ? (
       <p className="itemCard__text, color_gray, margin_left">Saints are a low-waist, drop crotch relaxed boyfriend jean. Straight fit across the hips, bow shape legs, with knee darts and tapered leg. Back pockets dropped slightly for slouch feel.</p>
-          <img src={minus} className="itemCard__plus2" alt="plus"/>
+            ) : null}
+          </div>
+
+          <div className="itemCard__shipping">
+          <img src={minus} className="itemCard__plus2" onClick={showShippingContent} alt="plus"/>
       <p className="itemCard__miniTitle, color_black, margin_left">SHIPPING & RETURNS</p>
-          <img src={minus} className="itemCard__plus3" alt="plus"/>
+          {shippingIsVisible
+            ? (
+              <p className="itemCard__text, color_gray, margin_left">Saints are a low-waist, drop crotch relaxed boyfriend jean. Straight fit across the hips, bow shape legs, with knee darts and tapered leg.</p>
+            ) : null}
+          </div>
+
+          <div className="itemCard__fabric">
+          <img src={minus} className="itemCard__plus3" onClick={showFabricContent} alt="plus"/>
       <p className="itemCard__miniTitle, color_black, margin_left">FABRIC COMPOSITION</p>
+          {fabricIsVisible
+            ? (
+              <p className="itemCard__text, color_gray, margin_left">Saints are a low-waist, drop crotch relaxed boyfriend jean. Straight fit across the hips, bow shape legs, with knee darts and tapered leg.</p>
+            ) : null}
+          </div>
 
         </div>
       </div>

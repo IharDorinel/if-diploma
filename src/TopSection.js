@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import EnterSearch from "./EnterSearch";
 import SearchResults from "./SearchResults";
+import Account from "./Account";
 
 // images
 import logo from './project_images/brand-logo.svg';
@@ -12,6 +13,12 @@ import wishlist from './project_images/wishlist-icon.svg';
 const TopSection = () => {
 
   const [isVisible, setIsVisible] = useState(false);
+
+  const [signInIsVisible, setSignInIsVisible] = useState(true);
+
+  const [signOutIsVisible, setSignOutIsVisible] = useState(false);
+
+  const [accountIsVisible, setAccountIsVisible] = useState(false);
 
   const [currentValue, setCurrentValue] = useState('');
 
@@ -38,6 +45,15 @@ const TopSection = () => {
     setIsVisible(prev => !prev);
   };
 
+  const showAccount = () => {
+    setAccountIsVisible(prev => !prev);
+  };
+
+  const signOut = () => {
+    setSignOutIsVisible(prev => !prev);
+    setSignInIsVisible(prev => !prev);
+  }
+
   const searchResults = data.length > 0 ? <SearchResults props={data} /> : null;
 
   return (
@@ -58,7 +74,14 @@ const TopSection = () => {
           <img className="header__loupe" src={loupe} alt="loupe" />
           <p className="header__page" onClick={showSearch}>SEARCH</p>
         </div>
-          <p className="header__page">SIGN IN</p>
+          {signInIsVisible
+            ? (
+          <p className="header__page" onClick={showAccount}>SIGN IN </p>
+            ) : null}
+          {signOutIsVisible
+            ? (
+              <p className="header__page" onClick={signOut}>SIGN OUT</p>
+            ) : null}
           <p className="header__page">BAG (2)</p>
           <img src={wishlist} className="header__wishlist" alt="wishlist" />
         </div>
@@ -69,6 +92,13 @@ const TopSection = () => {
           <EnterSearch setValue={setValue} fetchData={fetchData}
                        currentValue={currentValue} setIsVisible={setIsVisible} setData={setData} />
           )
+          : null
+        }
+
+        {accountIsVisible ? (
+          <Account setAccountIsVisible={setAccountIsVisible} setSignInIsVisible={setSignInIsVisible}
+                   setSignOutIsVisible={setSignOutIsVisible}/>
+        )
           : null
         }
 

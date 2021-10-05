@@ -1,5 +1,10 @@
 .instagram__section {
-    padding: 50px;
+    padding: 60px;
+}
+
+.instagram__title {
+    margin-left: 60px;
+    cursor: pointer;
 }
 
 .instagram__text {
@@ -15,13 +20,13 @@
 }
 
 .instagram__firstImage {
-    width: 630px;
-    height: 630px;
+    width: 600px;
+    height: 600px;
 }
 
 .instagram__image {
-    width: 315px;
-    height: 315px;
+    width: 300px;
+    height: 300px;
     object-position: center;
     object-fit: cover;
 }

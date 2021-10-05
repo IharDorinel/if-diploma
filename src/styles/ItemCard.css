@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    position: relative;
 }
 
 .itemCard__image {
@@ -11,7 +12,7 @@
 
 .itemCard__descrContainer {
     margin: 60px;
-    position: relative;
+
 }
 
 .itemCard__title {
@@ -77,24 +78,32 @@
 }
 
 .itemCard__plus1 {
-    bottom: 261px;
-    left: 0;
+    top: 377px;
+    right: 270px;
     position: absolute;
     cursor: pointer;
 }
 
 .itemCard__plus2 {
-    bottom: 60px;
-    left: 0;
+    /*bottom: 60px;*/
+    /*left: 0;*/
+    bottom: 220px;
+    right: 270px;
     position: absolute;
     cursor: pointer;
 }
 
 .itemCard__plus3 {
-    bottom: 25px;
-    left: 0;
+    /*bottom: 25px;*/
+    /*left: 0;*/
+    bottom: 183px;
+    right: 270px;
     position: absolute;
     cursor: pointer;
+}
+
+.itemCard__text {
+    position: absolute;
 }
 
 .color_gray {

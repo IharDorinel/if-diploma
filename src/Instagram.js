@@ -16,7 +16,7 @@ const Instagram = () => {
         <section className="instagram__section">
       <div>
       <span className="instagram__text">SHOP INSTAGRAM</span>
-      <span className="instagram__text"> SHOP ></span>
+      <span className="instagram__text instagram__title"> SHOP ></span>
       </div>
         <div className="instagram__bigContainer">
       <img src={insta4} className="instagram__firstImage" alt="insta4"/>
