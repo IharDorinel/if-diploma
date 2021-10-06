@@ -16,32 +16,45 @@ const ItemCard = () => {
 
   const [fabricIsVisible, setFabricIsVisible] = useState(false);
 
+  const { id } = useParams();
+
+  const [item, setItem] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://modnikky-api.herokuapp.com/api/catalog/${id}`)
+      .then((response) => response.json())
+      .then((response) => setItem(response));
+  }, []);
+
+  if(item === null) {
+    return <h3>404 Not found</h3>;
+  };
+
 
   const showProductContent = () => {
     setProductIsVisible(prev => !prev);
-
   }
 
   const showShippingContent = () => {
     setShippingIsVisible(prev => !prev);
-
   }
 
   const showFabricContent = () => {
     setFabricIsVisible(prev => !prev);
-
   }
 
 
   return (
     <>
-      <div className="itemCard__section">
+
+
+      <section className="itemCard__section">
 
       <img src={item1} className="itemCard__image" alt="item.image"/>
       <img src={item2} className="itemCard__image" alt="item.image"/>
 
         <div className="itemCard__descrContainer">
-        <p className="itemCard__title">CHALK SAINTS BOYFRIEND</p>
+          <p className="itemCard__title">{item.name}</p>
       <p className="itemCard__miniTitle, color_black">USD $300.00</p>
       <p className="itemCard__miniTitle, color_lightGray">PRE-ORDER</p>
       <p className="itemCard__miniTitle, color_gray">COLOR</p>
@@ -83,24 +96,12 @@ const ItemCard = () => {
           </div>
 
         </div>
-      </div>
+      </section>
     </>
   )
 }
 
 export default ItemCard;
 
-// const { id } = useParams();
-//
-// const [item, setItem] = useState(null);
-//
-// useEffect(() => {
-//   fetch(`https://modnikky-api.herokuapp.com/api/catalog/${id}`)
-//     .then(res => res.json())
-//     .then(data => setItem(data))
-// }, [])
-//
-// if(item === null) {
-//   return <h3>404 Not found</h3>;
-// };
+
 

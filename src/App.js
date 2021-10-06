@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 //components
@@ -25,6 +25,8 @@ import './styles/SaleContent.css';
 import './styles/ItemCard.css';
 import './styles/Bag.css';
 import './styles/Instagram.css';
+import './styles/FilterItems.css';
+import Account from "./Account";
 
 
 
@@ -39,18 +41,24 @@ function App() {
       .catch(err => console.err)
   }, [])
 
+
+
   return (
-   <>
+
      <Router>
       <TopSection />
       <Category props={data}/>
       <Sale props={data}/>
+       <Switch>
+       <Route exact path="/:id" >
        <ItemCard />
+       </Route>
+       </Switch>
        {/*<Bag />*/}
        <Instagram />
       <Footer />
      </Router>
-   </>
+
   );
 }
 

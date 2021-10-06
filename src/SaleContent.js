@@ -23,10 +23,10 @@ const SaleContent = ({props}) => {
           <rectangle className="saleContent__rectangle">
             <p className="saleContent__discount">-{percent}%</p>
             </rectangle>
-          <span className="saleContent__price">$ {elem.price.value}</span>
           <Router>
-          <span className="saleContent__perPrice">$ {elem.price.value * (100 - percent) / 100}</span>
+          <span className="saleContent__price"><Link to={`${elem.id}`}>$ {elem.price.value}</Link></span>
           </Router>
+          <span className="saleContent__perPrice">$ {elem.price.value * (100 - percent) / 100}</span>
         </div>
         </Router>
       ))

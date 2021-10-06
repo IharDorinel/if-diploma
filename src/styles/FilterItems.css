@@ -1,0 +1,81 @@
+.filter__section {
+    padding-top: 90px;
+    margin: auto;
+    width: 1240px;
+}
+
+.filter__titleContainer {
+    text-align: center;
+}
+
+.filter__firstTitle {
+    font: 34px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    margin-top: 100px;
+}
+
+.filter__secondTitle {
+    font: 34px Helvetica Neue, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.filter__gallery {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 80px;
+    position: relative;
+}
+
+.filter__ellipse {
+    width: 50px;
+    height: 50px;
+    top: 33%;
+    right: -20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.filter__arrow {
+    width: 16px;
+    height: 25px;
+    top: 35.5%;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.filter__item {
+    height: 500px;
+    margin-right: 12px;
+    position: relative;
+}
+
+.filter__image {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.filter__wishlist {
+    top: 12px;
+    right: 12px;
+    position: absolute;
+}
+
+.filter__price {
+    font: 18px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 40px;
+    left: 0;
+    bottom: 50px;
+    position: absolute;
+}
+

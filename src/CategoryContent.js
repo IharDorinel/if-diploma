@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, BrowserRouter as Router} from "react-router-dom";
 
 // images
@@ -8,54 +8,70 @@ import swimwear from "./project_images/categories_images/swimwear.svg";
 import denim from "./project_images/categories_images/denim.svg";
 import tops from "./project_images/categories_images/tops.svg";
 import beauty from "./project_images/categories_images/beauty.svg";
+import wishlist from "./project_images/wishlist-icon.svg";
+import FilterItems from "./FilterItems";
 
 
 const CategoryContent = ({ props }) => {
 
+  const [data, setData] = useState([]);
+
+  const fetchData = () => fetch('https://modnikky-api.herokuapp.com/api/catalog')
+    .then(res => res.json());
+
+  const showContent = (e) => {
+
+    fetchData(e.target.textContent)
+      .then((data) => data.filter(obj => obj?.type?.includes(e.target.textContent)))
+      .then((data) => setData(data))
+      .catch((err) => setData([]))
+  }
+
+  const filterItems = data.length > 0 ? <FilterItems props={data}/> : null
+
   return (
     <>
+      <div className="category__contContainer">
+      <div className="category__rectContainer">
       <rectangle className="category__rectangle">
         <img src={dress} className="category__image" alt="tees" />
-        <Router>
-        <p className="category__text">
-          <Link to={`/type`}>Dresses</Link>
-        </p>
-        </Router>
+
+        <p className="category__text" onClick={showContent}>Dresses</p>
+
       </rectangle>
         <rectangle className="category__rectangle">
         <img src={tees} className="category__image" alt="tees" />
-          <Router>
-        <p className="category__text">
-          <Link to={`/type`}>Tees</Link>
-        </p>
-          </Router>
+
+        <p className="category__text" onClick={showContent} >Tees</p>
+
       </rectangle>
       <rectangle className="category__rectangle">
         <img src={swimwear} className="category__image" alt="swimwear" />
-        <Router>
-        <p className="category__text">
-          <Link to={`/type`}>Swimwear</Link>
-        </p>
-        </Router>
+
+        <p className="category__text" onClick={showContent} >Swimwear</p>
+
       </rectangle>
       <rectangle className="category__rectangle">
         <img src={denim} className="category__image" alt="denim" />
-        <Router>
-        <p className="category__text">
-          <Link to={`/type`}>Denim</Link>
-        </p>
-        </Router>
+
+        <p className="category__text" onClick={showContent} >Denim</p>
+
       </rectangle>
       <rectangle className="category__rectangle">
         <img src={tops} className="category__image" alt="tops" />
-        <p className="category__text">Tops</p>
+        <p className="category__text" >Tops</p>
       </rectangle>
       <rectangle className="category__rectangle">
         <img src={beauty} className="category__image" alt="beauty" />
-        <p className="category__text">Beauty</p>
+        <p className="category__text" >Beauty</p>
       </rectangle>
+      </div>
 
-    </>
+      <div>
+      {filterItems}
+      </div>
+      </div>
+      </>
 )}
 
 export default CategoryContent;
