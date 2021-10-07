@@ -1,20 +1,32 @@
 import React from 'react';
 
 // images
-import ellipse from "./project_images/Ellipse.svg";
-import arrow from "./project_images/arrow.svg";
-import SaleContent from "./SaleContent";
+import wishlist from "./project_images/wishlist-icon.svg";
 
 
 const SearchResults = ({props}) => {
 
 
   return (
-    <section className="sale__section">
-      <div className="sale__gallery">
-        <img src={ellipse} className="sale__ellipse" alt="ellipse" />
-        <img src={arrow} className="sale__arrow" alt="arrow" />
-        <SaleContent props={props}/>
+    <section className="filter__section">
+      <div className="filter__titleContainer">
+        <p className="filter__secondTitle">Search results</p>
+      </div>
+      <div className="filter__gallery">
+        {props.map((elem) => (
+
+          <div className="filter__item" key={elem.id}>
+
+            <img  src={elem.images[0]} className="filter__image" alt={elem.name}/>
+
+            <img src={wishlist} className="filter__wishlist" alt="wishlist" />
+
+            <span className="filter__price">$ {elem.price.value}</span>
+
+          </div>
+
+        ))
+        }
       </div>
     </section>
   )

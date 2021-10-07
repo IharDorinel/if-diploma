@@ -1,7 +1,7 @@
 .filter__section {
     padding-top: 90px;
     margin: auto;
-    width: 1240px;
+    width: 1250px;
 }
 
 .filter__titleContainer {
@@ -25,6 +25,7 @@
 
 .filter__gallery {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     overflow: hidden;
     margin-top: 80px;

@@ -26,7 +26,8 @@ import './styles/ItemCard.css';
 import './styles/Bag.css';
 import './styles/Instagram.css';
 import './styles/FilterItems.css';
-import Account from "./Account";
+import './styles/Block.css';
+
 
 
 
