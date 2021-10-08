@@ -8,7 +8,6 @@ import arrow from "./project_images/arrow.svg";
 
 const Sale = ({ props }) => {
 
-
   return (
     <>
     <section className="sale__section">

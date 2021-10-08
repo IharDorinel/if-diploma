@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 // images
 import wishlist from "./project_images/wishlist-icon.svg";
 
+
 const FilterItems = ({ props }) => {
 
-  console.log(props)
 
   return (
     <>
@@ -22,6 +23,8 @@ const FilterItems = ({ props }) => {
                 <img  src={elem.images[0]} className="filter__image" alt={elem.name}/>
 
                 <img src={wishlist} className="filter__wishlist" alt="wishlist" />
+
+                <span className="filter__title"><Link to={`${elem.id}`}>{elem.name}</Link></span>
 
                 <span className="filter__price">$ {elem.price.value}</span>
 

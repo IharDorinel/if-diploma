@@ -38,6 +38,13 @@
     position: absolute;
 }
 
+.saleContent__title {
+    font: 14px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 40px;
+}
+
 .saleContent__price {
     font: 18px Roboto, sans-serif;
     font-style: normal;
@@ -45,7 +52,7 @@
     line-height: 40px;
     text-decoration-line: line-through;
     left: 0;
-    bottom: 50px;
+    bottom: 20px;
     position: absolute;
 }
 
@@ -56,6 +63,6 @@
     line-height: 40px;
     color: #D7302D;
     left: 75px;
-    bottom: 50px;
+    bottom: 20px;
     position: absolute;
 }

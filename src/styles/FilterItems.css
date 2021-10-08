@@ -70,13 +70,22 @@
     position: absolute;
 }
 
+.filter__title {
+    font: 14px Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
 .filter__price {
     font: 18px Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: 40px;
     left: 0;
-    bottom: 50px;
+    bottom: 20px;
     position: absolute;
 }
 

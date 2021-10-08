@@ -13,8 +13,7 @@ const SaleContent = ({props}) => {
   return (
     <>
       {props.map((elem) => (
-        <Router>
-          <Link to={`/${elem.id}`}/>
+       <>
         <div className="saleContent__item" key={elem.id}>
 
           <img  src={elem.images[0]} className="saleContent__image" alt={elem.name}/>
@@ -23,12 +22,14 @@ const SaleContent = ({props}) => {
           <rectangle className="saleContent__rectangle">
             <p className="saleContent__discount">-{percent}%</p>
             </rectangle>
-          <Router>
-          <span className="saleContent__price"><Link to={`${elem.id}`}>$ {elem.price.value}</Link></span>
-          </Router>
-          <span className="saleContent__perPrice">$ {elem.price.value * (100 - percent) / 100}</span>
-        </div>
-        </Router>
+
+        <span className="saleContent__title"><Link to={`${elem.id}`}>{elem.name}</Link></span>
+
+         <span className="saleContent__price">$ {elem.price.value}</span>
+
+           <span className="saleContent__perPrice">$ {elem.price.value * (100 - percent) / 100}</span>
+          </div>
+       </>
       ))
       }
     </>

@@ -1,13 +1,22 @@
 .itemCard__section {
+    width: 1330px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     position: relative;
 }
 
+.itemCard__back {
+    color: #D8D8D8;
+    left: 10px;
+    position: absolute;
+}
+
 .itemCard__image {
-    width: 510px;
-    height: 900px;
+    width: 500px;
+    height: 750px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .itemCard__descrContainer {
@@ -15,7 +24,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: flex-start;
-    margin: 80px 60px 0;
+    margin: 10px 60px 0;
     position: relative;
 }
 
@@ -47,9 +56,16 @@
     display: block;
     height: 1px;
     background-color: black;
-    width: 15px;
+    width: 10px;
     margin-top: 5px;
     position: absolute;
+}
+
+.itemCard__buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
 }
 
 .itemCard__button {
@@ -57,14 +73,12 @@
     height: 50px;
     background-color: #000F08;
     color: #FFFFFF;
-    margin-top: 35px;
     cursor: pointer;
 }
 
 .itemCard__colorRect {
     width: 30px;
     height: 30px;
-    background-color: #DFDED9;
     border: 2px solid #000F08;
     text-align: left;
 }
@@ -73,11 +87,9 @@
     width: 50px;
     height: 50px;
     background-color: #000F08;
-    top: 342px;
-    right: -28px;
-    position: absolute;
     margin-left: 1px;
     cursor: pointer;
+    position: relative;
 }
 
 .itemCard__wishlist {
@@ -119,6 +131,17 @@
     line-height: 12px;
 }
 
+.itemCard__descrText {
+    margin-top: -10px;
+    margin-left: 25px;
+    width: 150px;
+    font: 10px Helvetica Neue LT Std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    color: #8C8C8C;
+}
+
 .color_gray {
     color: #8C8C8C;
 }
@@ -131,13 +154,3 @@
     color: #000F08
 }
 
-.itemCard__descrText {
-    margin-top: -10px;
-    margin-left: 30px;
-    width: 150px;
-    font: 12px Helvetica Neue LT Std, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-    color: #8C8C8C;
-}
