@@ -34,15 +34,18 @@ const Bag = ({bagContent}) => {
                 <div className="bag__selectContainer">
                   <p className="bag__text">SIZE:</p>
                   <select className="bag__selectNumber">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    <option value="1">{item.availableSizes.join('').split(',')[0].trim()}</option>
+                    <option value="2">{item.availableSizes.join('').split(',')[1].trim()}</option>
                   </select>
                 </div>
                 <div className="bag__selectContainer">
                   <p className="bag__text">QUANTITY:</p>
                   <select className="bag__selectNumber">
-                    <option value="1">{item.availableSizes.join('').split(',')[0].trim()}</option>
-                    <option value="2">{item.availableSizes.join('').split(',')[1].trim()}</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                   </select>
                 </div>
               </div>
