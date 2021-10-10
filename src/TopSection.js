@@ -56,6 +56,7 @@ const TopSection = () => {
 
   const searchResults = data.length > 0 ? <SearchResults props={data} /> : null;
 
+
   return (
     <>
       <div className="header__bigContainer">

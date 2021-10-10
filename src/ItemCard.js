@@ -7,7 +7,7 @@ import minus from './project_images/collapse-icon.svg';
 import plus from './project_images/Union.svg';
 
 
-const ItemCard = ({data}) => {
+const ItemCard = ({data, bagContent, setBagContent}) => {
 
   const [productIsVisible, setProductIsVisible] = useState(false);
 
@@ -27,7 +27,20 @@ const ItemCard = ({data}) => {
 
   const [fabricMinusIsVisible, setFabricMinusIsVisible] = useState(false);
 
+
   const { id } = useParams();
+
+
+  const addToBag = (data) => {
+
+    let list = JSON.parse(localStorage.getItem('ID')) || [];
+
+      list.push(data.filter((item) => item.id === id));
+
+    localStorage.setItem('ID', JSON.stringify(list.flat()));
+    setBagContent(list.flat());
+
+  }
 
 
   const showProductContent = () => {
@@ -47,6 +60,7 @@ const ItemCard = ({data}) => {
     setFabricPlusIsVisible(prev => !prev);
     setFabricMinusIsVisible(prev => !prev);
   }
+
 
 
   return (
@@ -79,7 +93,7 @@ const ItemCard = ({data}) => {
         </div>
 
           <div className="itemCard__buttonContainer">
-        <button className="itemCard__button">ADD TO BAG</button>
+        <button className="itemCard__button" onClick={() => addToBag(data)}>ADD TO BAG</button>
         <rectangle className="itemCard__rectangle">
         <img src={wishlist} className="itemCard__wishlist" alt="wishlist" />
         </rectangle>

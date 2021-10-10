@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, useParams} from 'react-router-dom';
 
 
 //components
@@ -34,6 +34,24 @@ const data = [{"id":"5cd9a543-e4a3-4aa7-afa7-a78cf716ad9d","type":"Dresses","nam
 
 function App() {
 
+  // const [cartProducts, setCartProducts] = useState([]);
+
+
+
+  const [bagContent, setBagContent] = useState([]);
+
+  // const { id } = useParams();
+
+
+    // setBagIsVisible(true);
+
+
+    // return (
+    //   <div>
+    //     <Bag data={data} bagContent={bagContent} />
+    //   </div>
+    // );
+
 
 
 
@@ -49,9 +67,11 @@ function App() {
 
 
        <Route exact path="/:id" >
-       <ItemCard data={data}/>
+       <ItemCard data={data} bagContent={bagContent} setBagContent={setBagContent}/>
        </Route>
        </Switch>
+
+       <Bag data={data} bagContent={bagContent} />
 
       <Footer />
      </Router>

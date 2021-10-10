@@ -56,12 +56,12 @@
 }
 
 select {
-    width: 85px;
+    width: 65px;
     border: none;
 }
 
 .bag__selectNumber {
-    width: 35px;
+    width: 45px;
 }
 
 option {
