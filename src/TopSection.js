@@ -7,10 +7,11 @@ import Account from "./Account";
 import logo from './project_images/brand-logo.svg';
 import loupe from './project_images/Vector.svg';
 import wishlist from './project_images/wishlist-icon.svg';
+import {Link} from "react-router-dom";
 
 
 
-const TopSection = () => {
+const TopSection = ({bagContent}) => {
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -83,7 +84,7 @@ const TopSection = () => {
             ? (
               <p className="header__page" onClick={signOut}>SIGN OUT</p>
             ) : null}
-          <p className="header__page">BAG (2)</p>
+          <p className="header__page"><Link to="/bag">BAG ({bagContent.length})</Link></p>
           <img src={wishlist} className="header__wishlist" alt="wishlist" />
         </div>
        

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {NavLink, useParams} from 'react-router-dom';
+import {Link, NavLink, useParams} from 'react-router-dom';
 
 // images
 import wishlist from './project_images/wishlist-icon.svg';
@@ -35,7 +35,13 @@ const ItemCard = ({data, bagContent, setBagContent}) => {
 
     let list = JSON.parse(localStorage.getItem('ID')) || [];
 
-      list.push(data.filter((item) => item.id === id));
+
+    const itemIndex = list.findIndex(value => value.id === id);
+
+
+    if(itemIndex < 0) {
+      list.push(data.filter((item) => item.id === id))
+    }
 
     localStorage.setItem('ID', JSON.stringify(list.flat()));
     setBagContent(list.flat());
@@ -93,7 +99,7 @@ const ItemCard = ({data, bagContent, setBagContent}) => {
         </div>
 
           <div className="itemCard__buttonContainer">
-        <button className="itemCard__button" onClick={() => addToBag(data)}>ADD TO BAG</button>
+        <button className="itemCard__button" onClick={() => addToBag(data)}><Link to={`/bag/${item.id}`}>ADD TO BAG</Link></button>
         <rectangle className="itemCard__rectangle">
         <img src={wishlist} className="itemCard__wishlist" alt="wishlist" />
         </rectangle>

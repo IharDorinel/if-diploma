@@ -34,33 +34,16 @@ const data = [{"id":"5cd9a543-e4a3-4aa7-afa7-a78cf716ad9d","type":"Dresses","nam
 
 function App() {
 
-  // const [cartProducts, setCartProducts] = useState([]);
-
-
 
   const [bagContent, setBagContent] = useState([]);
-
-  // const { id } = useParams();
-
-
-    // setBagIsVisible(true);
-
-
-    // return (
-    //   <div>
-    //     <Bag data={data} bagContent={bagContent} />
-    //   </div>
-    // );
-
-
 
 
   return (
 
      <Router>
-      <TopSection />
+      <TopSection bagContent={bagContent}/>
 
-       <Switch>
+       {/*<Switch>*/}
        <Route exact path="/">
          <MainPage />
        </Route>
@@ -69,9 +52,15 @@ function App() {
        <Route exact path="/:id" >
        <ItemCard data={data} bagContent={bagContent} setBagContent={setBagContent}/>
        </Route>
-       </Switch>
 
-       <Bag data={data} bagContent={bagContent} />
+       <Route exact path="/bag/:id">
+       <Bag data={data} bagContent={bagContent} setBagContent={setBagContent}/>
+       </Route>
+
+         <Route exact path="/bag">
+           <Bag data={data} bagContent={bagContent} setBagContent={setBagContent}/>
+         </Route>
+       {/*</Switch>*/}
 
       <Footer />
      </Router>

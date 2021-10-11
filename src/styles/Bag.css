@@ -1,5 +1,5 @@
 .bag__section {
-    padding: 0 450px 120px;
+    padding: 40px 450px 120px;
 }
 
 .bag__title {
@@ -56,7 +56,7 @@
 }
 
 select {
-    width: 65px;
+    width: 100px;
     border: none;
 }
 
@@ -117,4 +117,15 @@ option {
 .bag__iconContainer {
     margin-top: 20px;
     text-align: center;
+}
+
+.bag__message {
+    margin: 50px auto;
+    text-align: center;
+
+}
+
+.bag__back {
+    color: black;
+    margin-left: 15px;
 }
