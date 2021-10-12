@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
+import {NavLink, useParams} from "react-router-dom";
 
 
 // images
 import cross from './project_images/remove-icon.svg';
 import maestro from './project_images/maestro-logo.svg';
 import visa from './project_images/visa-logo.svg';
-import {NavLink, useParams} from "react-router-dom";
 
 
-
-const Bag = ({bagContent, setBagContent}) => {
+const Bag = ({bagContent}) => {
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -63,6 +62,7 @@ const Bag = ({bagContent, setBagContent}) => {
       {isVisible
         ? (
       <section className="bag__section">
+        <NavLink to="/" className="bag__back">Back</NavLink>
         <span className="bag__title">BAG</span>
         <span className="bag__quantity, color_gray">{bagContent.length} items</span>
         <hr/>

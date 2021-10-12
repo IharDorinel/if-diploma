@@ -6,9 +6,8 @@ import ellipse from "./project_images/Ellipse.svg";
 import arrow from "./project_images/arrow.svg";
 
 
-const Sale = ({ props }) => {
+const Sale = ({ data, favorites, setFavorites, setHeaderStyle }) => {
 
-  console.log(props)
 
   return (
     <>
@@ -20,7 +19,7 @@ const Sale = ({ props }) => {
       <div className="sale__gallery">
         <img src={ellipse} className="sale__ellipse" alt="ellipse" />
         <img src={arrow} className="sale__arrow" alt="arrow" />
-        <SaleContent props={props}/>
+        <SaleContent data={data} favorites={favorites} setFavorites={setFavorites} setHeaderStyle={setHeaderStyle}/>
       </div>
     </section>
     </>

@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    width: 100vw;
     box-sizing: border-box;
 }
 
@@ -19,9 +18,21 @@ body {
     position: relative;
 }
 
+.header__bigContainerNew {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-clip: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
 .header__logo {
     width: 375px;
     height: 30px;
+    /*background-color: black;*/
 }
 
 .header__mainContainer {
@@ -56,7 +67,20 @@ body {
     cursor: pointer;
 }
 
+.header__pageNew {
+    color: black;
+    font: 14px Roboto, sans-serif;
+    line-height: 20px;
+    cursor: pointer;
+}
+
 .header__loupe {
+    width: 12px;
+    height: 12px;
+}
+
+.header__loupeNew {
+
     width: 12px;
     height: 12px;
 }

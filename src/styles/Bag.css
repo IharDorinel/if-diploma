@@ -127,5 +127,15 @@ option {
 
 .bag__back {
     color: black;
-    margin-left: 15px;
+    left: 10px;
+    position: absolute;
+}
+
+.toBag__button {
+    width: 140px;
+    height: 40px;
+    background-color: #000F08;
+    color: #FFFFFF;
+    margin-right: 80px;
+    cursor: pointer;
 }

@@ -7,7 +7,8 @@ import minus from './project_images/collapse-icon.svg';
 import plus from './project_images/Union.svg';
 
 
-const ItemCard = ({data, bagContent, setBagContent}) => {
+const ItemCard = ({data, setBagContent, setFavorites, setHeaderStyle, setHeaderPagesStyle,
+                    setLogoIsVisible, setLogoBlackIsVisible, setHeaderText}) => {
 
   const [productIsVisible, setProductIsVisible] = useState(false);
 
@@ -46,6 +47,33 @@ const ItemCard = ({data, bagContent, setBagContent}) => {
     localStorage.setItem('ID', JSON.stringify(list.flat()));
     setBagContent(list.flat());
 
+    setHeaderStyle('header__bigContainerNew');
+    setHeaderPagesStyle('header__pageNew');
+    setHeaderText(false);
+    setLogoIsVisible(false);
+    setLogoBlackIsVisible(true)
+  }
+
+  const addToFavorites = (data) => {
+
+    let list = JSON.parse(localStorage.getItem('Favorites')) || [];
+
+
+    const itemIndex = list.findIndex(value => value.id === id);
+
+
+    if(itemIndex < 0) {
+      list.push(data.filter((item) => item.id === id))
+    }
+
+    localStorage.setItem('Favorites', JSON.stringify(list.flat()));
+    setFavorites(list.flat());
+
+    setHeaderStyle('header__bigContainerNew');
+    setHeaderPagesStyle('header__pageNew');
+    setHeaderText(false);
+    setLogoIsVisible(false);
+    setLogoBlackIsVisible(true)
   }
 
 
@@ -76,7 +104,7 @@ const ItemCard = ({data, bagContent, setBagContent}) => {
         data.filter((item) => item.id === id)
           .map((item) => (
         <section className="itemCard__section">
-          <NavLink to="/" className="itemCard__back">Back</NavLink>
+          <NavLink to="/" className="itemCard__back" onClick={setHeaderStyle('header__bigContainer')}>Back</NavLink>
         <img src={item.images[0]} className="itemCard__image" alt="item.image"/>
         <img src={item.images[1]} className="itemCard__image" alt="item.image"/>
 
@@ -100,8 +128,8 @@ const ItemCard = ({data, bagContent, setBagContent}) => {
 
           <div className="itemCard__buttonContainer">
         <button className="itemCard__button" onClick={() => addToBag(data)}><Link to={`/bag/${item.id}`}>ADD TO BAG</Link></button>
-        <rectangle className="itemCard__rectangle">
-        <img src={wishlist} className="itemCard__wishlist" alt="wishlist" />
+        <rectangle className="itemCard__rectangle"><Link to={`/favorites/${item.id}`}>
+        <img src={wishlist} className="itemCard__wishlist" alt="wishlist" onClick={() => addToFavorites(data)} /></Link>
         </rectangle>
           </div>
 

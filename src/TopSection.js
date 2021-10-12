@@ -5,13 +5,18 @@ import Account from "./Account";
 
 // images
 import logo from './project_images/brand-logo.svg';
+import logo_black from './project_images/brand-logo-black.svg';
 import loupe from './project_images/Vector.svg';
 import wishlist from './project_images/wishlist-icon.svg';
 import {Link} from "react-router-dom";
 
 
 
-const TopSection = ({bagContent}) => {
+const TopSection = ({bagContent, headerStyle, headerPagesStyle, setHeaderStyle, setHeaderPagesStyle,
+                      loupeStyle, setLoupeStyle, headerText, setHeaderText,
+                      logoIsVisible, setLogoIsVisible, logoBlackIsVisible, setLogoBlackIsVisible}) => {
+
+
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -60,32 +65,55 @@ const TopSection = ({bagContent}) => {
 
   return (
     <>
-      <div className="header__bigContainer">
+
+      <div className={headerStyle}>
 
         <div className="header__mainContainer">
         <div className="header__leftUpperContainer">
-        <p className="header__page">NEW ARRIVALS</p>
-        <p className="header__page">SHOP</p>
-        <p className="header__page">COLLECTIONS</p>
+        <p className={headerPagesStyle}>NEW ARRIVALS</p>
+        <p className={headerPagesStyle}>SHOP</p>
+        <p className={headerPagesStyle}>COLLECTIONS</p>
         </div>
 
+          {logoIsVisible
+            ? (
           <img src={logo} className="header__logo" alt="logo" />
-
+            ) : null}
+          {logoBlackIsVisible
+            ? (
+          <img src={logo_black} className="header__logo" alt="logo" />
+            ) : null}
         <div className="header__rightUpperContainer">
           <div className="header__searchContainer">
-          <img className="header__loupe" src={loupe} alt="loupe" />
-          <p className="header__page" onClick={showSearch}>SEARCH</p>
+          <img className={loupeStyle} src={loupe} alt="loupe" />
+          <p className={headerPagesStyle} onClick={showSearch}>SEARCH</p>
         </div>
           {signInIsVisible
             ? (
-          <p className="header__page" onClick={showAccount}>SIGN IN </p>
+          <p className={headerPagesStyle} onClick={showAccount}>SIGN IN </p>
             ) : null}
           {signOutIsVisible
             ? (
-              <p className="header__page" onClick={signOut}>SIGN OUT</p>
+              <p className={headerPagesStyle} onClick={signOut}>SIGN OUT</p>
             ) : null}
-          <p className="header__page"><Link to="/bag">BAG ({bagContent.length})</Link></p>
-          <img src={wishlist} className="header__wishlist" alt="wishlist" />
+          <p className={headerPagesStyle} onClick={() => {
+            setHeaderStyle('header__bigContainerNew');
+            setHeaderPagesStyle('header__pageNew');
+            setLoupeStyle('header__loupeNew');
+            setHeaderText(false);
+            setLogoIsVisible(false);
+            setLogoBlackIsVisible(true)
+          }}><Link to="/bag">BAG ({bagContent.length})</Link></p>
+          <rectangle onClick={() => {
+            setHeaderStyle('header__bigContainerNew');
+            setHeaderPagesStyle('header__pageNew');
+            setLoupeStyle('header__loupeNew');
+            setHeaderText(false);
+            setLogoIsVisible(false);
+            setLogoBlackIsVisible(true)
+          }}><Link to="/favorites">
+          <img src={wishlist} className="header__wishlist" alt="wishlist" /></Link>
+          </rectangle>
         </div>
        
         </div>
@@ -104,13 +132,15 @@ const TopSection = ({bagContent}) => {
           : null
         }
 
+        {headerText
+          ? (
         <div className="header__lowerContainer">
         <h1 className="header__header">NEW COLLECTION</h1>
           <p className="header__text">Our easiest chuck-on-and-go staples come with a serious style heritage<br/>
             that’s liberating, sexy, comfy and supremely cool.</p>
         <button type="submit" className="header__button">SHOP NEW ARRIVALS</button>
         </div>
-
+          ) : null}
       </div>
 
       {searchResults}

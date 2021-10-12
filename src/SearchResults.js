@@ -30,7 +30,9 @@ const SearchResults = ({props}) => {
 
         ))
         }
+
       </div>
+
     </section>
   )
 }
