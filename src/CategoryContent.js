@@ -80,6 +80,7 @@ const CategoryContent = ({ props }) => {
         <p className="category__text" onClick={showBlock} >Beauty</p>
       </rectangle>
       </div>
+      </div>
 
       <div>
       {filterItems}
@@ -89,7 +90,7 @@ const CategoryContent = ({ props }) => {
         <Block blockData={blockData}/>
           ) : null}
       </div>
-      </div>
+
       </>
 )}
 

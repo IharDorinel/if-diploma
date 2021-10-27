@@ -1,11 +1,11 @@
 .filter__section {
     padding-top: 90px;
     margin: auto;
-    width: 1250px;
+    width: 1260px;
 }
 
 .filter__titleContainer {
-    text-align: center;
+    margin-right: 20px;
 }
 
 .filter__firstTitle {
@@ -21,6 +21,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 40px;
+    text-align: center;
 }
 
 .filter__gallery {
@@ -29,6 +30,16 @@
     align-items: center;
     overflow: hidden;
     margin-top: 80px;
+    position: relative;
+}
+
+.search__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 80px;
+    margin-left: 13px;
     position: relative;
 }
 
@@ -53,8 +64,12 @@
 
 .filter__item {
     height: 500px;
-    margin-right: 12px;
+    margin-right: 13px;
     position: relative;
+}
+
+.filter__item:nth-child(4n) {
+    margin-right: 0;
 }
 
 .filter__image {
@@ -68,6 +83,7 @@
     top: 12px;
     right: 12px;
     position: absolute;
+    cursor: pointer;
 }
 
 .filter__title {
@@ -89,3 +105,69 @@
     position: absolute;
 }
 
+.search__notFound {
+    font: 34px Helvetica Neue, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    margin-left: 300px;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 1124px) {
+    .filter__section {
+        padding-top: 30px;
+        padding-bottom: 0;
+        margin: auto;
+        width: 316px;
+    }
+
+    .filter__secondTitle {
+        font: 24px Helvetica Neue, sans-serif;
+        margin-left: -50px;
+    }
+
+    .filter__gallery {
+        flex-wrap: wrap;
+        height: 400px;
+        margin-top: 20px;
+        margin-left: -30px;
+    }
+
+    .filter__item {
+        width: 170px;
+        height: 300px;
+        margin-right: 3px;
+        margin-top: 50px;
+    }
+
+    .filter__image {
+        width: 150px;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .filter__wishlist {
+        top: 8px;
+        right: 35px;
+    }
+
+    .filter__title {
+        font: 11px Roboto, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 40px;
+        text-decoration: none;
+    }
+
+    .filter__price {
+        font: 14px Roboto, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 40px;
+        left: 0;
+        bottom: -25px;
+        position: absolute;
+    }
+}

@@ -5,7 +5,7 @@
     width: 1240px;
 }
 
-.category__titleContainer {
+.sale__titleContainer {
     text-align: center;
 }
 
@@ -49,4 +49,31 @@
     position: absolute;
     z-index: 2;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1124px) {
+    .sale__section {
+        padding-top: 0;
+        padding-bottom: 90px;
+        margin: auto;
+        width: 366px;
+    }
+
+    .sale__firstTitle {
+        font: 30px Roboto, sans-serif;
+        margin-top: 20px;
+    }
+
+    .sale__secondTitle {
+        font: 30px Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    .sale__gallery {
+        flex-wrap: wrap;
+        height: 400px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
 }

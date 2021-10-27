@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link, NavLink, useParams} from 'react-router-dom';
 
 // images
 import wishlist from './project_images/wishlist-icon.svg';
 import minus from './project_images/collapse-icon.svg';
 import plus from './project_images/Union.svg';
+import {deleteItemFromCart, setItemInCart, setItemInFav} from "./store/reducers/cartReducer";
+import {useDispatch, useSelector} from "react-redux";
 
 
 const ItemCard = ({data, setBagContent, setFavorites, setHeaderStyle, setHeaderPagesStyle,
@@ -28,52 +30,34 @@ const ItemCard = ({data, setBagContent, setFavorites, setHeaderStyle, setHeaderP
 
   const [fabricMinusIsVisible, setFabricMinusIsVisible] = useState(false);
 
+  const {id} = useParams();
 
-  const { id } = useParams();
+  const itemsBag = useSelector(state => state.cart.itemsInCart);
 
+  const itemsFav = useSelector(state => state.cart.itemsInFav);
 
-  const addToBag = (data) => {
+  const isItemInCard = itemsBag.some(elem => elem.id === id);
 
-    let list = JSON.parse(localStorage.getItem('ID')) || [];
+  const isItemInFav = itemsFav.some(elem => elem.id === id);
 
+  const dispatch = useDispatch();
 
-    const itemIndex = list.findIndex(value => value.id === id);
-
-
-    if(itemIndex < 0) {
-      list.push(data.filter((item) => item.id === id))
+  const addToBag = (e) => {
+    console.log(id)
+    e.stopPropagation();
+    if(!isItemInCard) {
+      dispatch(setItemInCart(data.filter(elem => elem.id === id)[0]))
     }
 
-    localStorage.setItem('ID', JSON.stringify(list.flat()));
-    setBagContent(list.flat());
-
-    setHeaderStyle('header__bigContainerNew');
-    setHeaderPagesStyle('header__pageNew');
-    setHeaderText(false);
-    setLogoIsVisible(false);
-    setLogoBlackIsVisible(true)
   }
 
-  const addToFavorites = (data) => {
-
-    let list = JSON.parse(localStorage.getItem('Favorites')) || [];
-
-
-    const itemIndex = list.findIndex(value => value.id === id);
-
-
-    if(itemIndex < 0) {
-      list.push(data.filter((item) => item.id === id))
+  const addToFavorites = (e) => {
+    console.log(id)
+    e.stopPropagation();
+    if(!isItemInFav) {
+      dispatch(setItemInFav(data.filter(elem => elem.id === id)[0]))
     }
 
-    localStorage.setItem('Favorites', JSON.stringify(list.flat()));
-    setFavorites(list.flat());
-
-    setHeaderStyle('header__bigContainerNew');
-    setHeaderPagesStyle('header__pageNew');
-    setHeaderText(false);
-    setLogoIsVisible(false);
-    setLogoBlackIsVisible(true)
   }
 
 
@@ -95,23 +79,26 @@ const ItemCard = ({data, setBagContent, setFavorites, setHeaderStyle, setHeaderP
     setFabricMinusIsVisible(prev => !prev);
   }
 
+  const titleRef = useRef();
 
+  useEffect(() => {
+    titleRef.current.scrollIntoView();
+  }, [])
 
   return (
     <>
-
-      {
-        data.filter((item) => item.id === id)
+    <p ref={titleRef} className="itemCard__anchor">Anchor</p>
+      {data.filter((item) => item.id === id)
           .map((item) => (
         <section className="itemCard__section">
-          <NavLink to="/" className="itemCard__back" onClick={setHeaderStyle('header__bigContainer')}>Back</NavLink>
+          <NavLink to="/" className="itemCard__back">Home</NavLink>
         <img src={item.images[0]} className="itemCard__image" alt="item.image"/>
-        <img src={item.images[1]} className="itemCard__image" alt="item.image"/>
+        <img src={item.images[1]} className="itemCard__image itemCard__image-two" alt="item.image"/>
 
         <div className="itemCard__descrContainer">
         <p className="itemCard__title" key={item.id}>{item.name}</p>
         <div>
-        <p className="itemCard__miniTitle, itemCard__price, color_black">USD ${item.price.value}</p>
+        <p className="itemCard__miniTitle, itemCard__price, color_black">USD ${item.price.value / 100}</p>
         <p className="itemCard__miniTitle, itemCard__order, color_lightGray">PRE-ORDER</p>
         </div>
 
@@ -127,17 +114,17 @@ const ItemCard = ({data, setBagContent, setFavorites, setHeaderStyle, setHeaderP
         </div>
 
           <div className="itemCard__buttonContainer">
-        <button className="itemCard__button" onClick={() => addToBag(data)}><Link to={`/bag/${item.id}`}>ADD TO BAG</Link></button>
-        <rectangle className="itemCard__rectangle"><Link to={`/favorites/${item.id}`}>
-        <img src={wishlist} className="itemCard__wishlist" alt="wishlist" onClick={() => addToFavorites(data)} /></Link>
+        <button className="itemCard__button" onClick={addToBag}>ADD TO BAG</button>
+        <rectangle className="itemCard__rectangle">
+        <img src={wishlist} className="itemCard__wishlist" alt="wishlist" onClick={addToFavorites} />
         </rectangle>
           </div>
 
         <div className="itemCard__drop">
       {productPlusIsVisible
-        ? (
+        &&
         <img src={plus} className="itemCard__plus" onClick={showProductContent} alt="plus"/>
-        ) : null}
+        }
       {productMinusIsVisible
         ? (
         <img src={minus} className="itemCard__minus" onClick={showProductContent} alt="minus"/>
@@ -197,6 +184,4 @@ const ItemCard = ({data, setBagContent, setFavorites, setHeaderStyle, setHeaderP
 }
 
 export default ItemCard;
-
-
 

@@ -3,11 +3,11 @@ import React, {useState} from 'react';
 // images
 import cross from './project_images/cross.svg';
 
-const EnterSearch = ({setIsVisible, setValue}) => {
+const EnterSearch = ({setEnterSearchIsVisible, setValue}) => {
 
 
   const closeSearch = () => {
-    setIsVisible(prev => !prev);
+    setEnterSearchIsVisible(prev => !prev);
   }
 
   return (

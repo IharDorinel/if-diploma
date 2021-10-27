@@ -66,8 +66,8 @@ const Account = ({setAccountIsVisible, setSignInIsVisible, setSignOutIsVisible})
     };
 
     const signIn = () => {
-        if(firstNameError === '' & lastNameError === '' & emailError === '' & passwordError === ''
-          & firstName !== '' & lastName !== '' & email !== '' & password !== '') {
+        if(firstNameError === '' && lastNameError === '' && emailError === '' && passwordError === ''
+          && firstName !== '' && lastName !== '' && email !== '' && password !== '') {
             setAccountIsVisible(prev => !prev);
             setSignInIsVisible(prev => !prev);
             setSignOutIsVisible(prev => !prev);
