@@ -33,7 +33,9 @@
     object-fit: cover;
 }
 
-@media only screen and (max-width: 1124px) {
+/*mobile view*/
+
+@media only screen and (max-width: 576px) {
     .instagram__section {
         width: 360px;
         padding: 3px;

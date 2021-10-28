@@ -2,7 +2,9 @@
     text-align: center;
 }
 
-@media only screen and (max-width: 1124px) {
+/*mobile view*/
+
+@media only screen and (max-width: 576px) {
     .block__title {
         font: 20px Roboto, sans-serif;
     }

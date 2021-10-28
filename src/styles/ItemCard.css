@@ -31,7 +31,7 @@
 .itemCard__descrContainer {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
     margin: 10px 60px 0;
     position: relative;
@@ -163,7 +163,9 @@
     color: #000F08
 }
 
-@media only screen and (max-width: 1124px) {
+/*mobile view*/
+
+@media only screen and (max-width: 576px) {
     .itemCard__section {
        width: 366px;
        flex-direction: column;

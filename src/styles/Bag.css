@@ -160,7 +160,9 @@ option {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1124px) {
+/*mobile view*/
+
+@media only screen and (max-width: 576px) {
     .bag__section {
         padding: 40px 10px 120px;
     }

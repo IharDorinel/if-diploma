@@ -86,8 +86,9 @@
     display: none;
 }
 
+/*mobile view*/
 
-@media only screen and (max-width: 1124px) {
+@media only screen and (max-width: 576px) {
     .footer__input {
         border: none;
         width: 250px;

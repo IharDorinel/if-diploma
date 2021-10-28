@@ -114,7 +114,9 @@
     margin-top: 0;
 }
 
-@media only screen and (max-width: 1124px) {
+/*mobile view*/
+
+@media only screen and (max-width: 576px) {
     .filter__section {
         padding-top: 30px;
         padding-bottom: 0;
