@@ -130,13 +130,12 @@ const Footer = () => {
             <p className="footer__text">FAQ</p>
             <hr className="footer__box-hr"/>
 
-            <div className="footer__drop">
-
+            <div className="footer__drop" onClick={showServiceContent}>
               {servicePlusIsVisible &&
-            <img src={plus} className="footer__plus" onClick={showServiceContent} alt="plus"/>
+            <img src={plus} className="footer__plus" alt="plus"/>
                 }
               {serviceMinusIsVisible &&
-              <img src={minus} className="footer__minus" onClick={showServiceContent} alt="minus"/>
+              <img src={minus} className="footer__minus" alt="minus"/>
                }
               <div>
 
@@ -163,12 +162,13 @@ const Footer = () => {
             <p className="footer__text">ABOUT US</p>
             <p className="footer__text">LEGAL POLICIES</p>
             <hr className="footer__box-hr"/>
-            <div className="footer__drop">
+            
+            <div className="footer__drop" onClick={showCompanyContent}>
               {companyPlusIsVisible &&
-            <img src={plus} className="footer__plus" onClick={showCompanyContent} alt="plus"/>
+            <img src={plus} className="footer__plus" alt="plus"/>
                 }
               {companyMinusIsVisible &&
-              <img src={minus} className="footer__minus" onClick={showCompanyContent} alt="minus"/>
+              <img src={minus} className="footer__minus" alt="minus"/>
               }
 
               <div>
@@ -201,14 +201,14 @@ const Footer = () => {
               <img src={instagram} className="footer__image" alt="instagram" />
               <p className="footer__text">INSTAGRAM</p>
             </div>
-
             <hr className="footer__box-hr"/>
-            <div className="footer__drop">
+            
+            <div className="footer__drop" onClick={showFollowContent}>
               {followPlusIsVisible &&
-            <img src={plus} className="footer__plus" onClick={showFollowContent} alt="plus"/>
+            <img src={plus} className="footer__plus" alt="plus"/>
                }
               {followMinusIsVisible &&
-              <img src={minus} className="footer__minus" onClick={showFollowContent} alt="minus"/>
+              <img src={minus} className="footer__minus" alt="minus"/>
               }
               <div>
 
@@ -240,12 +240,13 @@ const Footer = () => {
             <p className="footer__text footer__contact">Visit us at Shalalaeva 23,</p>
             <p className="footer__text footer__contact">Bologoe, Russia</p>
             <hr className="footer__box-hr"/>
-            <div className="footer__drop">
+            
+            <div className="footer__drop" onClick={showContactContent}>
               {contactPlusIsVisible &&
-            <img src={plus} className="footer__plus" onClick={showContactContent} alt="plus"/>
+            <img src={plus} className="footer__plus" alt="plus"/>
                 }
               {contactMinusIsVisible &&
-              <img src={minus} className="footer__minus" onClick={showContactContent} alt="minus"/>
+              <img src={minus} className="footer__minus" alt="minus"/>
               }
               <div>
 

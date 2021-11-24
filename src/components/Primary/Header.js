@@ -30,6 +30,8 @@ const Header = ({setItemFav}) => {
   const [currentValue, setCurrentValue] = useState('');
 
   const [data, setData] = useState([]);
+  
+  const [visible, setVisible] = useState(8);
 
   const bagItems = useSelector(state => state.cart.itemsInCart);
 
@@ -49,6 +51,7 @@ const Header = ({setItemFav}) => {
       .then(data => data.filter(obj => obj?.type?.toLowerCase().includes(currentValue.toLowerCase()) ||
         obj?.name?.toLowerCase().includes(currentValue.toLowerCase())))
       .then(data => {setData(data);
+        setVisible(8);
         setSearchResultsIsVisible(true);
   })
   }
@@ -130,7 +133,7 @@ const Header = ({setItemFav}) => {
         </div>
 
       {searchResultsIsVisible &&
-      <SearchResults props={data} setItemFav={setItemFav}/>
+      <SearchResults props={data} visible={visible} setVisible={setVisible} setItemFav={setItemFav}/>
         }
 
     </>

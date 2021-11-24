@@ -30,6 +30,7 @@
 
 .enterSearch__input {
     border: none;
+    outline: none;
     background-color: transparent;
     width: 350px;
     height: 40px;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {deleteItemFromFav, setItemInFav} from "../store/reducers/cartReducer";
@@ -60,13 +60,13 @@ function MainPage() {
   const dispatch = useDispatch();
 
   const itemsFav = useSelector(state => state.cart.itemsInFav);
-
+  
   const setItemFav = (item) => {
     const isItemInFav = itemsFav.some(elem => elem.id === item.id);
     if (isItemInFav) {
-      dispatch(deleteItemFromFav(item.id))
+      dispatch(deleteItemFromFav(item.id));
     } else {
-      dispatch(setItemInFav(item))
+      dispatch(setItemInFav(item));
     }
   }
 

@@ -110,6 +110,8 @@
 .itemCard__drop {
     display: flex;
     align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
 }
 
 .itemCard__dropText {

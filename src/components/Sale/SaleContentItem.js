@@ -3,15 +3,16 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {deleteItemFromCart, setItemInCart} from "../../store/reducers/cartReducer";
 
-// images
-import wishlist from '../../project_images/wishlist-icon.svg';
-
 
 const SaleContentItem = ({item, setItemFav}) => {
   
   const itemsBag = useSelector(state => state.cart.itemsInCart);
   
   const isItemInCard = itemsBag.some(elem => elem.id === item.id);
+  
+  const itemsFav = useSelector(state => state.cart.itemsInFav);
+  
+  const isItemInFav = itemsFav.some(elem => elem.id === item.id);
   
   const dispatch = useDispatch();
 
@@ -37,7 +38,14 @@ const SaleContentItem = ({item, setItemFav}) => {
         <a href="#" className="saleContent__image-link">
           <img src={item.images[0]} className="saleContent__image" alt={item.name}/>
         </a>
-        <img src={wishlist} className="saleContent__wishlist" alt="wishlist" onClick={handleClickFav} />
+        {isItemInFav ? (
+          <div className="saleContent__wishlistNew" onClick={handleClickFav}>
+          </div>
+        ) :
+          <div className="saleContent__wishlist" onClick={handleClickFav}>
+          </div>
+        }
+        
         <button type="submit" className="saleContent__button" onClick={handleClickBag}>
           {isItemInCard ? (
               'REMOVE'

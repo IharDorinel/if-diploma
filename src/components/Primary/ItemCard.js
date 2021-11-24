@@ -99,13 +99,14 @@ const ItemCard = ({data}) => {
             </div>
             <p className="itemCard__miniTitle, itemCard__size, color_gray">SIZE</p>
             <div className="itemCard__sizeContainer">
-              <span className="itemCard__size">{item.availableSizes.join('').split(',')[0].trim()}</span>
-              <span className="itemCard__size">{item.availableSizes.join('').split(',')[1].trim()}</span>
+              {item.availableSizes.join('').split(',').map(item =>
+                <span className="itemCard__size">{item.trim()}</span>
+              )}
             </div>
             <div className="itemCard__buttonContainer">
               <button className="itemCard__button" onClick={addToBag}>
                 {isItemInCard ? (
-                    'IT IS IN BAG'
+                    'ADDED'
                   )
                   : 'ADD TO BAG'}
               </button>
@@ -113,12 +114,12 @@ const ItemCard = ({data}) => {
                 <img src={wishlist} className="itemCard__wishlist" alt="wishlist" onClick={addToFavorites} />
               </div>
             </div>
-            <div className="itemCard__drop">
+            <div className="itemCard__drop" onClick={showProductContent}>
               {productPlusIsVisible &&
-              <img src={plus} className="itemCard__plus" onClick={showProductContent} alt="plus"/>
+              <img src={plus} className="itemCard__plus" alt="plus"/>
               }
               {productMinusIsVisible &&
-              <img src={minus} className="itemCard__minus" onClick={showProductContent} alt="minus"/>
+              <img src={minus} className="itemCard__minus" alt="minus"/>
               }
               <div className="itemCard__dropText">
                 <p className="itemCard__miniTitle, color_black, margin_left">PRODUCT DESCRIPTION</p>
@@ -127,12 +128,12 @@ const ItemCard = ({data}) => {
                  }
               </div>
             </div>
-            <div className="itemCard__drop">
+            <div className="itemCard__drop" onClick={showShippingContent}>
               {shippingPlusIsVisible &&
-                  <img src={plus} className="itemCard__plus" onClick={showShippingContent} alt="plus"/>
+                  <img src={plus} className="itemCard__plus" alt="plus"/>
                 }
               {shippingMinusIsVisible &&
-                  <img src={minus} className="itemCard__minus" onClick={showShippingContent} alt="minus"/>
+                  <img src={minus} className="itemCard__minus" alt="minus"/>
                 }
               <div className="itemCard__dropText">
                 <p className="itemCard__miniTitle, color_black, margin_left">SHIPPING & RETURNS</p>
@@ -141,12 +142,12 @@ const ItemCard = ({data}) => {
                   }
               </div>
             </div>
-            <div className="itemCard__drop">
+            <div className="itemCard__drop" onClick={showFabricContent}>
               {fabricPlusIsVisible &&
-                  <img src={plus} className="itemCard__plus" onClick={showFabricContent} alt="plus"/>
+                  <img src={plus} className="itemCard__plus" alt="plus"/>
                 }
               {fabricMinusIsVisible &&
-                  <img src={minus} className="itemCard__minus" onClick={showFabricContent} alt="minus"/>
+                  <img src={minus} className="itemCard__minus" alt="minus"/>
                 }
               <div className="itemCard__dropText">
                 <p className="itemCard__miniTitle, color_black, margin_left">FABRIC COMPOSITION</p>

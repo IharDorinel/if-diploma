@@ -3,12 +3,12 @@ import React from 'react';
 // components
 import SaleContentItem from "./SaleContentItem";
 
-const SaleContent = ({data, setItemFav}) => {
+const SaleContent = ({data, color, indexFirst, indexLast, setItemFav}) => {
 
   return (
     <>
-      {data.map((item) => (
-       <SaleContentItem item={item} setItemFav={setItemFav} />
+      {data.slice(indexFirst, indexLast).map((item) => (
+       <SaleContentItem item={item} color={color} setItemFav={setItemFav} />
       ))
       }
     </>

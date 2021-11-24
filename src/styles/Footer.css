@@ -144,6 +144,8 @@
     .footer__drop {
         display: flex;
         align-items: flex-start;
+        user-select: none;
+        cursor: pointer;
     }
 
     .footer__plus {

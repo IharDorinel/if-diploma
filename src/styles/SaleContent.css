@@ -36,9 +36,24 @@
 }
 
 .saleContent__wishlist {
+    width: 27px;
+    height: 25px;
     top: 12px;
     right: 12px;
     position: absolute;
+    background-color: white;
+    mask-image: url("../project_images/wishlist-icon.svg");
+    cursor: pointer;
+}
+
+.saleContent__wishlistNew {
+    width: 27px;
+    height: 25px;
+    top: 12px;
+    right: 12px;
+    position: absolute;
+    background-color: red;
+    mask-image: url("../project_images/wishlist-icon.svg");
     cursor: pointer;
 }
 
@@ -56,6 +71,7 @@
     position: absolute;
     cursor: pointer;
     opacity: 0;
+    z-index: 3;
 }
 
 .saleContent__rectangle {
@@ -162,8 +178,11 @@
     .saleContent__wishlist {
         top: 8px;
         right: 35px;
-        position: absolute;
-        cursor: pointer;
+    }
+
+    .saleContent__wishlistNew {
+        top: 8px;
+        right: 35px;
     }
 
     .saleContent__rectangle {
