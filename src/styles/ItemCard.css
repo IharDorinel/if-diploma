@@ -3,12 +3,21 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    margin-top: 30px;
     position: relative;
 }
 
-.itemCard__back {
-    color: #D8D8D8;
+.itemCard__anchor {
+    opacity: 0;
+    top: -20px;
     left: 10px;
+    position: absolute;
+}
+
+.itemCard__back {
+    top: -25px;
+    left: 10px;
+    text-decoration: underline;
     position: absolute;
 }
 
@@ -22,7 +31,7 @@
 .itemCard__descrContainer {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
     margin: 10px 60px 0;
     position: relative;
@@ -101,6 +110,8 @@
 .itemCard__drop {
     display: flex;
     align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
 }
 
 .itemCard__dropText {
@@ -154,3 +165,25 @@
     color: #000F08
 }
 
+/*mobile view*/
+
+@media only screen and (max-width: 576px) {
+    .itemCard__section {
+       width: 366px;
+       flex-direction: column;
+       margin-top: 20px;
+    }
+
+    .itemCard__image {
+        width: 366px;
+        height: 500px;
+    }
+
+    .itemCard__image-two {
+        display: none;
+    }
+
+    .itemCard__back {
+        display: none;
+    }
+}

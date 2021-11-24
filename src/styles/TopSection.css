@@ -5,16 +5,13 @@ body {
 }
 
 .header__bigContainer {
-    max-width: 100vw;
-    min-height: 100vh;
+    height: 800px;
     background-image: url("../project_images/mask.svg");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     background-clip: border-box;
-    padding: 0 100px 120px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 10px 120px;
     position: relative;
 }
 
@@ -24,6 +21,7 @@ body {
     background-position: top;
     background-size: cover;
     background-clip: border-box;
+    padding: 0 10px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -32,7 +30,6 @@ body {
 .header__logo {
     width: 375px;
     height: 30px;
-    /*background-color: black;*/
 }
 
 .header__mainContainer {
@@ -80,39 +77,53 @@ body {
 }
 
 .header__loupeNew {
-
     width: 12px;
     height: 12px;
+}
+
+.header__wishlistCont {
+    display: flex;
+    justify-content: center;
 }
 
 .header__wishlist {
     cursor: pointer;
 }
 
+.header__count {
+    color: #FFFFFF;
+    font: 8px Roboto, sans-serif;
+    line-height: 20px;
+}
+
+.header__countNew {
+    color: black;
+    font: 8px Roboto, sans-serif;
+    line-height: 20px;
+}
+
 .header__lowerContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
     position: absolute;
-    top: 400px;
-    left: 150px;
+    bottom: -50px;
+    left: 100px;
 }
 
 .header__header {
-    font: 56px Roboto, sans-serif;
+    font: 38px Roboto, sans-serif;
     font-style: normal;
     font-weight: 700;
-    line-height: 76px;
+    line-height: 38px;
     color: #FFFFFF;
-
 }
 
 .header__text {
-    font: 21px Roboto, sans-serif;
+    font: 16px Roboto, sans-serif;
     font-style: normal;
     font-weight: 400;
-    line-height: 48px;
+    line-height: 24px;
     color: #FFFFFF;
 }
 
@@ -121,9 +132,135 @@ body {
     background-color: transparent;
     width: 240px;
     height: 50px;
-    font: 14px Roboto, sans-serif;
+    font: 16px Roboto, sans-serif;
     font-style: normal;
     font-weight: 400;
     border: 2px solid #FFFFFF;
     cursor: pointer;
+}
+
+.header__burgerContainer {
+    display: none;
+}
+
+.header__bag {
+    display: none;
+}
+
+/*mobile view*/
+
+@media only screen and (max-width: 576px) {
+    .header__bigContainer {
+        height: 200px;
+    }
+
+    .header__mainContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__leftUpperContainer {
+        display: none;
+    }
+
+    .header__upperMobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__burgerContainer {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .header__burger1 {
+        width: 22px;
+        height: 2px;
+        margin-bottom: 6px;
+    }
+
+    .header__burger2 {
+        width: 15px;
+        height: 2px;
+    }
+
+    .header__page, .header__pageNew, .header__countNew {
+        display: none;
+    }
+
+    .header__logo {
+        width: 150px;
+        height: 30px;
+        margin-left: 70px;
+        margin-right: 20px;
+    }
+
+    .header__loupe {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    .header__bag {
+        width: 16px;
+        height: 16px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .header__wishlist {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    .header__count {
+        display: none;
+    }
+
+    .header__lowerContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        bottom: 0;
+        left: 35px;
+        text-align: center;
+    }
+
+    .header__header {
+        font: 36px Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 38px;
+        color: black;
+        margin-right: 35px;
+    }
+
+    .header__text {
+        font: 11px Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: black;
+        margin-right: 35px;
+    }
+
+    .header__button {
+        color: #000F08;
+        background-color: #FFFFFF;
+        width: 220px;
+        height: 40px;
+        font: 16px Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        border: 2px solid #000F08;
+        margin-top: 40px;
+        margin-left: 38px;
+        text-align: center;
+        cursor: pointer;
+    }
 }

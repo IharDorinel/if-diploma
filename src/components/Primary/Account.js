@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 
 // images
-import close_icon from './project_images/close-icon.svg';
+import close_icon from '../../project_images/close-icon.svg';
+
 
 const Account = ({setAccountIsVisible, setSignInIsVisible, setSignOutIsVisible}) => {
 
@@ -66,8 +67,8 @@ const Account = ({setAccountIsVisible, setSignInIsVisible, setSignOutIsVisible})
     };
 
     const signIn = () => {
-        if(firstNameError === '' & lastNameError === '' & emailError === '' & passwordError === ''
-          & firstName !== '' & lastName !== '' & email !== '' & password !== '') {
+        if(firstNameError === '' && lastNameError === '' && emailError === '' && passwordError === ''
+          && firstName !== '' && lastName !== '' && email !== '' && password !== '') {
             setAccountIsVisible(prev => !prev);
             setSignInIsVisible(prev => !prev);
             setSignOutIsVisible(prev => !prev);
@@ -84,45 +85,36 @@ const Account = ({setAccountIsVisible, setSignInIsVisible, setSignOutIsVisible})
     <>
       <section className="account__section">
         <div className="account__container">
-    <p className="account__title">CREATE ACCOUNT</p>
-        <img src={close_icon} className="account__close" onClick={closeAccount} alt="close_icon" />
+          <p className="account__title">CREATE ACCOUNT</p>
+          <img src={close_icon} className="account__close" onClick={closeAccount} alt="close_icon" />
         </div>
-
         <form className="account__form">
             <div className="account__error">{firstNameError}</div>
         <input type="text" name="text" className="account__input" placeholder="First Name" onChange={(e) => handleFirstName(e)} required />
         <hr className="account__hr"/>
-
             <div className="account__error">{lastNameError}</div>
         <input type="text" name="text" className="account__input" placeholder="Last Name" onChange={(e) => handleLastName(e)} required />
         <hr className="account__hr"/>
-
             <div className="account__error">{emailError}</div>
         <input type="email" name="email" className="account__input" placeholder="Email" onChange={(e) => handleEmail(e)} required />
         <hr className="account__hr"/>
-
             <div className="account__error">{passwordError}</div>
         <input type="password" name="password" className="account__input" placeholder="Password" onChange={(e) => handlePassword(e)} required />
         <hr className="account__hr"/>
         </form>
-
         <div className="account__checkboxContainer">
-        <input className="account__checkbox" type="checkbox" />
-        <div className="account__checkboxBox">
-        <p className="account__text">Let's get personal! We'll send you only the good stuff:</p>
-        <p className="account__text">Exclusive early access to Sale, new arrivals and promotions. No nasties.</p>
+          <input className="account__checkbox" type="checkbox" />
+          <div className="account__checkboxBox">
+            <p className="account__text">Let's get personal! We'll send you only the good stuff:</p>
+            <p className="account__text">Exclusive early access to Sale, new arrivals and promotions. No nasties.</p>
+          </div>
         </div>
-        </div>
-
         <span className="account__text, color_gray">By signing up you agree to </span>
         <span className="account__text, text-decoration">Terms of Service</span>
         <span className="account__text, color_gray"> and </span>
         <span className="account__text, text-decoration">Privacy Policy</span>
-
         <button type="submit" className="account__button" onClick={signIn}>SIGN UP</button>
-
         <p className="account__href" onClick={enterAccount}><a href="#">I HAVE AN ACCOUNT</a></p>
-
       </section>
     </>
   )

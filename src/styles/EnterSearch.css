@@ -12,7 +12,6 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    /*margin: 50px 200px;*/
 }
 
 .enterSearch__box {
@@ -31,12 +30,12 @@
 
 .enterSearch__input {
     border: none;
+    outline: none;
     background-color: transparent;
     width: 350px;
     height: 40px;
     font: 32px Roboto, sans-serif;
     margin-top: 180px;
-
 }
 
 .enterSearch__input::placeholder {
@@ -54,5 +53,4 @@
     color: white;
     background-color: white;
     border: none;
-    /*margin-right: 100px;*/
 }
