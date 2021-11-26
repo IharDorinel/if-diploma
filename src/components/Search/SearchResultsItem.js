@@ -1,13 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import useItemInFav from "../../hooks/useItemInFav";
 
 
 const SearchResultsItem = ({item, setItemFav}) => {
   
-  const itemsFav = useSelector(state => state.cart.itemsInFav);
-  
-  const isItemInFav = itemsFav.some(elem => elem.id === item.id);
+  const isItemInFav = useItemInFav(item.id);
   
   const handleClickFav = (e) => {
     e.stopPropagation();

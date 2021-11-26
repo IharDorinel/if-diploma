@@ -1,24 +1,22 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {deleteItemFromCart, setItemInCart} from "../../store/reducers/cartReducer";
+import useItemInFav from "../../hooks/useItemInFav";
+import useItemInBag from "../../hooks/useItemInBag";
 
 
 const SaleContentItem = ({item, setItemFav}) => {
   
-  const itemsBag = useSelector(state => state.cart.itemsInCart);
+  const isItemInBag = useItemInBag(item.id);
   
-  const isItemInCard = itemsBag.some(elem => elem.id === item.id);
-  
-  const itemsFav = useSelector(state => state.cart.itemsInFav);
-  
-  const isItemInFav = itemsFav.some(elem => elem.id === item.id);
+  const isItemInFav = useItemInFav(item.id);
   
   const dispatch = useDispatch();
 
   const handleClickBag = (e) => {
     e.stopPropagation();
-    if(isItemInCard) {
+    if(isItemInBag) {
       dispatch(deleteItemFromCart(item.id))
     } else {
       dispatch(setItemInCart(item))
@@ -47,7 +45,7 @@ const SaleContentItem = ({item, setItemFav}) => {
         }
         
         <button type="submit" className="saleContent__button" onClick={handleClickBag}>
-          {isItemInCard ? (
+          {isItemInBag ? (
               'REMOVE'
             )
             : 'ADD TO BAG'}

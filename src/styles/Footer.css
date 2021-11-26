@@ -1,5 +1,6 @@
 .footer__upper {
     text-align: center;
+    position: relative;
 }
 
 .footer__title {
@@ -21,8 +22,17 @@
     cursor: unset;
 }
 
+.footer__error {
+    color: red;
+    font: 14px Roboto, sans-serif;
+    margin-left: 600px;
+    margin-top: 20px;
+    position: absolute;
+}
+
 .footer__input {
     border: none;
+    outline: none;
     width: 350px;
     margin-top: 40px;
 }

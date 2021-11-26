@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {deleteItemFromFav, setItemInFav} from "../store/reducers/cartReducer";

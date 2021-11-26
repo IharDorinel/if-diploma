@@ -1,12 +1,14 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {NavLink, useParams} from 'react-router-dom';
 import {setItemInCart, setItemInFav} from "../../store/reducers/cartReducer";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 // images
 import wishlist from '../../project_images/wishlist-icon.svg';
 import minus from '../../project_images/collapse-icon.svg';
 import plus from '../../project_images/Union.svg';
+import useItemInFav from "../../hooks/useItemInFav";
+import useItemInBag from "../../hooks/useItemInBag";
 
 
 const ItemCard = ({data}) => {
@@ -30,20 +32,16 @@ const ItemCard = ({data}) => {
   const [fabricMinusIsVisible, setFabricMinusIsVisible] = useState(false);
 
   const {id} = useParams();
-
-  const itemsBag = useSelector(state => state.cart.itemsInCart);
-
-  const itemsFav = useSelector(state => state.cart.itemsInFav);
-
-  const isItemInCard = itemsBag.some(elem => elem.id === id);
-
-  const isItemInFav = itemsFav.some(elem => elem.id === id);
+  
+  const isItemInBag = useItemInBag(id);
+  
+  const isItemInFav = useItemInFav(id);
 
   const dispatch = useDispatch();
 
   const addToBag = (e) => {
     e.stopPropagation();
-    if(!isItemInCard) {
+    if(!isItemInBag) {
       dispatch(setItemInCart(data.filter(elem => elem.id === id)[0]))
     }
   }
@@ -73,15 +71,12 @@ const ItemCard = ({data}) => {
     setFabricMinusIsVisible(prev => !prev);
   }
 
-  const titleRef = useRef();
-
   useEffect(() => {
-    titleRef.current.scrollIntoView();
+    window.scrollTo(0,0);
   }, [])
 
   return (
     <>
-      <p ref={titleRef} className="itemCard__anchor">Anchor</p>
       {data.filter((item) => item.id === id)
           .map((item) => (
         <section className="itemCard__section">
@@ -105,7 +100,7 @@ const ItemCard = ({data}) => {
             </div>
             <div className="itemCard__buttonContainer">
               <button className="itemCard__button" onClick={addToBag}>
-                {isItemInCard ? (
+                {isItemInBag ? (
                     'ADDED'
                   )
                   : 'ADD TO BAG'}
