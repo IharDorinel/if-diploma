@@ -7,13 +7,6 @@
     position: relative;
 }
 
-.itemCard__anchor {
-    opacity: 0;
-    top: -20px;
-    left: 10px;
-    position: absolute;
-}
-
 .itemCard__back {
     top: -25px;
     left: 10px;
